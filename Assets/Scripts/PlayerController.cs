@@ -21,5 +21,12 @@ namespace Assets.Scripts
 
             _rb.AddForce(movement*Speed);
         }
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("pickUp"))
+            {
+                other.gameObject.SetActive(false);
+            }
+        }
     }
 }
